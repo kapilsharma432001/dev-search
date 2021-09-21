@@ -22,9 +22,9 @@
             <label for="formInput#email">{{field.label}}</label>
             {{field}}
 
-            {% if field.help_text %}
+            {% comment %} {% if field.help_text %}
               <small> {{field.help_text}} </small>
-            {% endif %}
+            {% endif %} {% endcomment %}
 
             {% for error in field.errors %}
               <p style = "color: red;"> {{error}} </p>
@@ -39,7 +39,7 @@
         </method=>
         <div class="auth__alternative">
           <p>Already have an Account?</p>
-          <a href="login.html">Log In</a>
+          <a href="{% url 'login' %}">Log In</a>
         </div>
       </div>
     </div>

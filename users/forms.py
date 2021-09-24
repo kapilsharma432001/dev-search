@@ -23,4 +23,26 @@ class CustomUserCreationForm(UserCreationForm):
 class ProfileForm(ModelForm):
     class Meta:
         model = Profile
-        fields = "__all__"
+        fields = ['name', 'username', 'email', 'location', 'email', 'short_intro',
+        'bio', 'profile_image', 'social_github', 'social_twitter', 'social_linkedin', 
+        'social_youtube']
+
+
+    def __init__(self, *args, **kwargs):
+        super(ProfileForm, self).__init__(*args, **kwargs)
+
+        self.fields['name'].widget.attrs.update({'class': 'input' })
+        self.fields['email'].widget.attrs.update({'class': 'input'})
+        self.fields['username'].widget.attrs.update({'class': 'input'})
+        self.fields['location'].widget.attrs.update({'class': 'input'})
+        self.fields['short_intro'].widget.attrs.update({'class': 'input'})
+        self.fields['bio'].widget.attrs.update({'class': 'input'})
+        self.fields['profile_image'].widget.attrs.update({'class': 'input'})
+        self.fields['social_github'].widget.attrs.update({'class': 'input'})
+        self.fields['social_twitter'].widget.attrs.update({'class': 'input'})
+        self.fields['social_linkedin'].widget.attrs.update({'class': 'input'})
+        self.fields['social_youtube'].widget.attrs.update({'class': 'input'})
+
+
+    
+        
